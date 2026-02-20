@@ -1,26 +1,133 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* =========================
+   THEME (Tailwind v4 way)
+========================= */
+
+@theme {
+  /* Colors */
+  --color-cream: #FAF9F6;
+  --color-cream-dark: #F5F3F0;
+
+  --color-blush: #F5E6E0;
+  --color-blush-dark: #EAD5CC;
+
+  --color-gold: #D4AF37;
+  --color-gold-light: #E5C76B;
+  --color-gold-dark: #B8941F;
+
+  --color-charcoal: #2C2C2C;
+  --color-charcoal-light: #4A4A4A;
+
+  --color-warm-gray: #8B8680;
+  --color-warm-gray-light: #A8A4A0;
+
+  /* Fonts */
+  --font-display: var(--font-playfair), serif;
+  --font-body: var(--font-cormorant), serif;
+  --font-script: var(--font-script), cursive;
+
+  /* Animations */
+  --animate-fade-in: fadeIn 0.8s ease-out forwards;
+  --animate-slide-up: slideUp 0.8s ease-out forwards;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* =========================
+   BASE STYLES
+========================= */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-cream text-charcoal font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  ::selection {
+    background: rgb(212 175 55 / 0.3);
+    color: var(--color-charcoal);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-cream-dark);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-gold);
+    border-radius: 4px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* =========================
+   CUSTOM UTILITIES (v4 way)
+========================= */
+
+@utility gold-accent {
+  background: linear-gradient(
+    135deg,
+    var(--color-gold) 0%,
+    var(--color-gold-light) 50%,
+    var(--color-gold) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@utility elegant-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+@utility soft-shadow {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+@utility gold-border {
+  border: 1px solid rgb(212 175 55 / 0.3);
+}
+
+@utility divider-gold {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold),
+    transparent
+  );
+}
+
+@utility hover-lift {
+  @apply transition-all duration-500 ease-out;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  }
+}
+
+
+/* =========================
+   KEYFRAMES
+========================= */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

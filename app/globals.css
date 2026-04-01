@@ -1,33 +1,39 @@
 @import "tailwindcss";
 
 /* =========================
-   THEME (Tailwind v4 way)
+   THEME — Dee Gee Luxury
 ========================= */
 
 @theme {
-  /* Colors */
-  --color-cream: #FAF9F6;
-  --color-cream-dark: #F5F3F0;
+  /* ─── Warm Ivory Grounds ─── */
+  --color-cream: #FDFBF5;
+  --color-cream-dark: #F4F0E4;
 
-  --color-blush: #F5E6E0;
-  --color-blush-dark: #EAD5CC;
+  /* ─── Blush ─── */
+  --color-blush: #EDD8C6;
+  --color-blush-dark: #E0C9B3;
 
-  --color-gold: #D4AF37;
-  --color-gold-light: #E5C76B;
-  --color-gold-dark: #B8941F;
+  /* ─── Champagne Gold — Old Money, Antique, Refined ─── */
+  --color-gold: #C9A66B;
+  --color-gold-light: #DFC28A;
+  --color-gold-dark: #9E7D42;
 
-  --color-charcoal: #2C2C2C;
-  --color-charcoal-light: #4A4A4A;
+  /* ─── Deep Warmth ─── */
+  --color-obsidian: #0F0D0B;
+  --color-charcoal: #1E1C1A;
+  --color-charcoal-light: #3C3830;
 
-  --color-warm-gray: #8B8680;
-  --color-warm-gray-light: #A8A4A0;
+  /* ─── Stone ─── */
+  --color-warm-gray: #847A70;
+  --color-warm-gray-light: #A8A09A;
 
-  /* Fonts */
-  --font-display: var(--font-playfair), serif;
-  --font-body: var(--font-cormorant), serif;
-  --font-script: var(--font-script), cursive;
+  /* ─── Fonts ─── */
+  --font-display: var(--font-playfair), "Playfair Display", serif;
+  --font-body: var(--font-cormorant), "Cormorant Garamond", serif;
+  --font-script: var(--font-great-vibes), "Great Vibes", cursive;
+  --font-cinzel: var(--font-cinzel-var), "Cinzel", serif;
 
-  /* Animations */
+  /* ─── Animations ─── */
   --animate-fade-in: fadeIn 0.8s ease-out forwards;
   --animate-slide-up: slideUp 0.8s ease-out forwards;
 }
@@ -46,12 +52,12 @@
   }
 
   ::selection {
-    background: rgb(212 175 55 / 0.3);
+    background: rgb(201 166 107 / 0.22);
     color: var(--color-charcoal);
   }
 
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 5px;
   }
 
   ::-webkit-scrollbar-track {
@@ -59,20 +65,21 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--color-gold);
-    border-radius: 4px;
+    background: var(--color-gold-dark);
+    border-radius: 2px;
   }
 }
 
 /* =========================
-   CUSTOM UTILITIES (v4 way)
+   CUSTOM UTILITIES
 ========================= */
 
 @utility gold-accent {
   background: linear-gradient(
     135deg,
-    var(--color-gold) 0%,
-    var(--color-gold-light) 50%,
+    var(--color-gold-dark) 0%,
+    var(--color-gold) 35%,
+    var(--color-gold-light) 60%,
     var(--color-gold) 100%
   );
   -webkit-background-clip: text;
@@ -81,15 +88,15 @@
 }
 
 @utility elegant-shadow {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
 @utility soft-shadow {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
 @utility gold-border {
-  border: 1px solid rgb(212 175 55 / 0.3);
+  border: 1px solid rgb(201 166 107 / 0.28);
 }
 
 @utility divider-gold {
@@ -103,14 +110,15 @@
 }
 
 @utility hover-lift {
-  @apply transition-all duration-500 ease-out;
+  transition-property: transform, box-shadow;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
   &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
   }
 }
-
 
 /* =========================
    KEYFRAMES
@@ -131,4 +139,3 @@
     transform: translateY(0);
   }
 }
-

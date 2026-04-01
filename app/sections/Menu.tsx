@@ -1,4 +1,3 @@
-// app/sections/Menu.tsx
 "use client";
 
 import { useState, useRef } from "react";
@@ -24,11 +23,13 @@ export function Menu() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-[10px] tracking-[0.45em] uppercase text-gold mb-5 flex items-center justify-center gap-3">
-            <span className="w-8 h-px bg-gold" />
-            Culinary Excellence
-            <span className="w-8 h-px bg-gold" />
-          </p>
+          <div className="flex items-center justify-center gap-5 mb-6">
+            <div className="w-8 h-px bg-gold/60" />
+            <span className="font-cinzel text-[8px] tracking-[0.6em] uppercase text-gold/70">
+              Culinary Excellence
+            </span>
+            <div className="w-8 h-px bg-gold/60" />
+          </div>
           <h2 className="font-display text-5xl md:text-6xl text-charcoal leading-tight mb-5">
             Signature Menu
           </h2>
@@ -38,13 +39,13 @@ export function Menu() {
           </p>
         </motion.div>
 
-        {/* Elegant tab navigation — underline style */}
-        <div className="flex flex-wrap justify-center border-b border-charcoal/10 mb-16">
+        {/* Tab navigation */}
+        <div className="flex flex-wrap justify-center border-b border-charcoal/8 mb-16">
           {menuCategories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`relative px-6 py-4 text-[10px] tracking-[0.32em] uppercase transition-colors duration-300 ${
+              className={`relative px-6 py-4 font-cinzel text-[9px] tracking-[0.38em] uppercase transition-colors duration-300 ${
                 activeCategory === cat.id
                   ? "text-charcoal"
                   : "text-warm-gray hover:text-charcoal"
@@ -61,7 +62,7 @@ export function Menu() {
           ))}
         </div>
 
-        {/* Menu items — editorial list */}
+        {/* Menu items */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeCategory}
@@ -76,7 +77,7 @@ export function Menu() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.07 }}
-                className="group grid md:grid-cols-[1fr_auto] gap-6 items-start py-8 border-b border-charcoal/8 hover:border-gold/25 transition-colors duration-300"
+                className="group grid md:grid-cols-[1fr_auto] gap-6 items-start py-8 border-b border-charcoal/[0.07] hover:border-gold/22 transition-colors duration-300"
               >
                 <div>
                   <div className="flex flex-wrap items-baseline gap-3 mb-2">
@@ -86,13 +87,13 @@ export function Menu() {
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="hidden md:inline text-[8px] tracking-[0.3em] uppercase text-gold/70 border border-gold/25 px-2 py-0.5"
+                        className="hidden md:inline font-cinzel text-[7px] tracking-[0.32em] uppercase text-gold/60 border border-gold/22 px-2 py-0.5"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <p className="text-warm-gray text-sm leading-relaxed max-w-lg">
+                  <p className="text-warm-gray text-[14px] leading-relaxed max-w-lg">
                     {item.description}
                   </p>
                 </div>
@@ -106,12 +107,12 @@ export function Menu() {
 
         {/* Footer CTA */}
         <div className="text-center mt-16">
-          <p className="text-warm-gray/60 text-sm italic mb-6">
+          <p className="text-warm-gray/50 text-sm italic mb-6 font-body">
             Custom menus crafted for your occasion upon request
           </p>
           <a
-            href="#contact"
-            className="inline-flex items-center gap-3 px-10 py-4 bg-charcoal text-cream text-[10px] tracking-[0.38em] uppercase hover:bg-gold hover:text-charcoal transition-all duration-400"
+            href="/#contact"
+            className="inline-flex items-center gap-3 px-10 py-4 bg-charcoal text-cream font-cinzel text-[9px] tracking-[0.38em] uppercase hover:bg-gold hover:text-charcoal transition-all duration-400"
           >
             Request Custom Menu
           </a>

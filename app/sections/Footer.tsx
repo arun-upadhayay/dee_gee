@@ -33,29 +33,39 @@ const socialIcons = [
   },
 ];
 
-const footerLinks: Record<string, string[]> = {
-  Company: ["About Us", "Our Legacy", "The Team", "Careers"],
-  Services: [
-    "Wedding Catering",
-    "Corporate Events",
-    "Private Celebrations",
-    "Event Planning",
-    "Beverage Service",
+const footerLinks: Record<string, { label: string; href: string }[]> = {
+  Company: [
+    { label: "About Us", href: "/#about" },
+    { label: "Our Legacy", href: "/#about" },
+    { label: "The Team", href: "/" },
+    { label: "Careers", href: "/" },
   ],
-  Connect: ["Contact", "Get a Quote", "FAQs", "Venue Partners"],
+  Services: [
+    { label: "Wedding Catering", href: "/services" },
+    { label: "Corporate Events", href: "/services" },
+    { label: "Private Celebrations", href: "/services" },
+    { label: "Pricing & Packages", href: "/services" },
+    { label: "Beverage Service", href: "/services" },
+  ],
+  Connect: [
+    { label: "Contact", href: "/#contact" },
+    { label: "Get a Quote", href: "/#contact" },
+    { label: "Portfolio", href: "/gallery" },
+    { label: "Venue Partners", href: "/" },
+  ],
 };
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0B0B0C]">
+    <footer className="bg-obsidian">
 
       {/* CTA strip */}
-      <div className="border-b border-white/5 px-6 lg:px-8 py-16">
+      <div className="border-b border-white/[0.04] px-6 lg:px-8 py-16">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div>
-            <p className="text-[9px] tracking-[0.42em] uppercase text-gold/55 mb-3">
+            <p className="font-cinzel text-[8px] tracking-[0.5em] uppercase text-gold/45 mb-4">
               Begin Planning
             </p>
             <h3 className="font-display text-3xl md:text-4xl text-white leading-tight">
@@ -65,10 +75,10 @@ export function Footer() {
             </h3>
           </div>
           <a
-            href="#contact"
-            className="shrink-0 px-10 py-4 border border-gold/40 text-gold text-[9px] tracking-[0.42em] uppercase hover:bg-gold hover:text-black transition-all duration-400"
+            href="/#contact"
+            className="shrink-0 px-10 py-4 border border-gold/35 text-gold font-cinzel text-[9px] tracking-[0.42em] uppercase hover:bg-gold hover:text-obsidian hover:border-gold transition-all duration-400"
           >
-            Start Planning →
+            Start Planning
           </a>
         </div>
       </div>
@@ -84,27 +94,28 @@ export function Footer() {
                 src="/logo12.png"
                 alt="Dee Gee Catering"
                 fill
-                className="object-contain object-left brightness-0 invert opacity-90"
+                className="object-contain object-left brightness-0 invert opacity-80"
               />
             </div>
 
             <div className="space-y-2">
-              <p className="text-[8px] tracking-[0.42em] uppercase text-gold/45">
+              <p className="font-cinzel text-[7px] tracking-[0.48em] uppercase text-gold/38">
                 Est. 1985 · Ludhiana, India
               </p>
-              <p className="text-white/38 leading-relaxed text-sm max-w-xs">
+              <p className="text-white/32 leading-relaxed text-sm max-w-xs font-body">
                 Imaginative catering for discerning hosts — where four decades of
                 culinary excellence meet contemporary elegance.
               </p>
             </div>
 
-            <div className="flex gap-3 pt-2">
+            <div className="flex gap-3 pt-1">
               {socialIcons.map(({ label, svg }) => (
                 <motion.a
                   key={label}
                   href="#"
-                  whileHover={{ y: -3 }}
-                  className="w-9 h-9 border border-white/10 flex items-center justify-center text-white/38 hover:text-gold hover:border-gold/40 transition-all duration-300"
+                  whileHover={{ y: -2 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                  className="w-9 h-9 border border-white/[0.08] flex items-center justify-center text-white/32 hover:text-gold hover:border-gold/35 transition-all duration-300"
                   aria-label={label}
                 >
                   {svg}
@@ -117,17 +128,17 @@ export function Footer() {
           <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-10">
             {Object.entries(footerLinks).map(([title, links]) => (
               <div key={title}>
-                <h4 className="text-[8px] tracking-[0.38em] uppercase text-gold/55 mb-6">
+                <h4 className="font-cinzel text-[7px] tracking-[0.45em] uppercase text-gold/42 mb-6">
                   {title}
                 </h4>
                 <ul className="space-y-3.5">
                   {links.map((link) => (
-                    <li key={link}>
+                    <li key={link.label}>
                       <a
-                        href="#"
-                        className="text-white/33 hover:text-white text-sm transition-colors duration-300"
+                        href={link.href}
+                        className="text-white/28 hover:text-white/65 text-sm transition-colors duration-300 font-body"
                       >
-                        {link}
+                        {link.label}
                       </a>
                     </li>
                   ))}
@@ -138,24 +149,24 @@ export function Footer() {
         </div>
 
         {/* Gold gradient divider */}
-        <div className="my-14 h-px bg-linear-to-r from-transparent via-gold/20 to-transparent" />
+        <div className="my-14 h-px bg-gradient-to-r from-transparent via-gold/18 to-transparent" />
 
         {/* Bottom bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-[11px] text-white/22">
-          <p>© {currentYear} Dee Gee Catering. All rights reserved.</p>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 font-cinzel text-[9px] text-white/18 tracking-wider">
+          <p>© {currentYear} Dee Gee Catering & Events. All rights reserved.</p>
 
-          <div className="flex items-center gap-2 text-white/14">
+          <div className="flex items-center gap-2 text-white/12">
             <span className="w-4 h-px bg-white/10" />
-            <span className="tracking-[0.22em] uppercase text-[9px]">
+            <span className="tracking-[0.28em] uppercase text-[8px]">
               Crafted with excellence
             </span>
             <span className="w-4 h-px bg-white/10" />
           </div>
 
           <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-white/55 transition-colors duration-300">Privacy</a>
-            <a href="#" className="hover:text-white/55 transition-colors duration-300">Terms</a>
-            <a href="#" className="hover:text-white/55 transition-colors duration-300">Cookies</a>
+            <a href="#" className="hover:text-white/45 transition-colors duration-300">Privacy</a>
+            <a href="#" className="hover:text-white/45 transition-colors duration-300">Terms</a>
+            <a href="#" className="hover:text-white/45 transition-colors duration-300">Cookies</a>
           </div>
         </div>
       </div>

@@ -1,4 +1,3 @@
-// app/sections/Story.tsx
 "use client";
 
 import { useRef } from "react";
@@ -6,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 
 const stats = [
-  { value: "50+", label: "Years" },
+  { value: "40+", label: "Years" },
   { value: "10k+", label: "Events" },
   { value: "98%", label: "Satisfaction" },
 ];
@@ -27,8 +26,10 @@ export function Story() {
           transition={{ duration: 0.7 }}
           className="flex items-center gap-4 mb-20"
         >
-          <div className="w-12 h-px bg-gold" />
-          <p className="text-gold text-[10px] tracking-[0.45em] uppercase">Our Heritage</p>
+          <div className="w-10 h-px bg-gold" />
+          <p className="font-cinzel text-[8px] tracking-[0.6em] uppercase text-gold/70">
+            Our Heritage
+          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-20 lg:gap-28 items-start">
@@ -42,9 +43,9 @@ export function Story() {
           >
             {/* Dot grid accent */}
             <div
-              className="absolute -top-8 -left-8 w-36 h-36 opacity-20 pointer-events-none z-0"
+              className="absolute -top-8 -left-8 w-36 h-36 opacity-15 pointer-events-none z-0"
               style={{
-                backgroundImage: "radial-gradient(circle, #D4AF37 1.2px, transparent 1.2px)",
+                backgroundImage: "radial-gradient(circle, #C9A66B 1.2px, transparent 1.2px)",
                 backgroundSize: "14px 14px",
               }}
             />
@@ -59,15 +60,15 @@ export function Story() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               {/* Inset gold frame */}
-              <div className="absolute inset-4 border border-gold/30 pointer-events-none z-10" />
+              <div className="absolute inset-4 border border-gold/25 pointer-events-none z-10" />
             </div>
 
             {/* Heritage badge */}
-            <div className="absolute -bottom-10 -right-4 md:-right-8 bg-[#1C1917] px-8 py-8 z-20 max-w-[230px]">
-              <p className="font-display text-4xl text-gold italic leading-none mb-1">Since</p>
+            <div className="absolute -bottom-10 -right-4 md:-right-8 bg-charcoal px-8 py-8 z-20 max-w-57.5">
+              <p className="font-script text-4xl text-gold leading-none mb-1">Since</p>
               <p className="font-display text-5xl text-white leading-none">1985</p>
-              <div className="mt-4 w-8 h-px bg-gold/50" />
-              <p className="mt-3 text-[9px] tracking-[0.32em] uppercase text-white/40 leading-relaxed">
+              <div className="mt-4 w-8 h-px bg-gold/40" />
+              <p className="mt-3 font-cinzel text-[7px] tracking-[0.35em] uppercase text-white/35 leading-relaxed">
                 Four generations of<br />culinary craft
               </p>
             </div>
@@ -80,7 +81,7 @@ export function Story() {
             transition={{ duration: 0.9, delay: 0.15 }}
             className="pt-0 lg:pt-20"
           >
-            <h2 className="font-display text-5xl md:text-6xl text-charcoal leading-[1.08] mb-8">
+            <h2 className="font-display text-5xl md:text-6xl text-charcoal leading-[1.06] mb-8">
               A Legacy of
               <br />
               <em className="text-gold not-italic">Exceptional</em>
@@ -88,18 +89,18 @@ export function Story() {
               Taste
             </h2>
 
-            <div className="w-16 h-px bg-gold mb-10" />
+            <div className="w-14 h-px bg-gold mb-10" />
 
-            <div className="space-y-5 text-warm-gray text-[16px] leading-[1.95]">
+            <div className="space-y-5 text-warm-gray text-[16px] leading-loose">
               <p>
                 What began as a modest family kitchen in 1985 has blossomed into one of
-                the most revered catering establishments in Ludhiana, Punjab. Dee Gee was founded
-                on a single belief — that every celebration deserves food which truly
-                honours the occasion.
+                the most revered catering establishments in Ludhiana, Punjab. Dee Gee was
+                founded on a single belief — that every celebration deserves food which
+                truly honours the occasion.
               </p>
               <p>
-                For five decades we have had the privilege of serving dignitaries,
-                and families celebrating their most precious moments. Our recipes pass through
+                For four decades we have had the privilege of serving dignitaries and
+                families celebrating their most precious moments. Our recipes pass through
                 each generation, every hand adding their signature while preserving the
                 authentic flavours that have become our legacy.
               </p>
@@ -111,11 +112,11 @@ export function Story() {
             </div>
 
             {/* Stats */}
-            <div className="mt-14 grid grid-cols-3 gap-px bg-gold/20">
+            <div className="mt-14 grid grid-cols-3 gap-px bg-gold/15">
               {stats.map((stat) => (
                 <div key={stat.label} className="bg-cream p-6 text-center">
-                  <div className="font-display text-3xl text-gold mb-1">{stat.value}</div>
-                  <div className="text-[9px] tracking-[0.32em] uppercase text-warm-gray">
+                  <div className="font-display text-3xl text-gold mb-1.5">{stat.value}</div>
+                  <div className="font-cinzel text-[7px] tracking-[0.38em] uppercase text-warm-gray">
                     {stat.label}
                   </div>
                 </div>
@@ -124,10 +125,10 @@ export function Story() {
 
             {/* CTA link */}
             <motion.a
-              href="#contact"
+              href="/#contact"
               whileHover={{ x: 6 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="inline-flex items-center gap-3 mt-12 text-charcoal font-display text-lg border-b border-charcoal/40 pb-1 hover:text-gold hover:border-gold transition-colors duration-300"
+              className="inline-flex items-center gap-3 mt-12 font-cinzel text-[9px] tracking-[0.42em] uppercase text-charcoal border-b border-charcoal/30 pb-1 hover:text-gold hover:border-gold transition-colors duration-300"
             >
               Begin Your Journey
               <span className="text-base">→</span>

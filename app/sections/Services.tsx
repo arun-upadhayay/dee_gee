@@ -1,66 +1,109 @@
-// app/sections/Services.tsx
 "use client";
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { services } from "@/app/lib/data";
-import { ArrowUpRight } from "lucide-react";
+
+const romanNumerals = ["I", "II", "III", "IV", "V", "VI"];
 
 export function Services() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="services" className="py-24 md:py-32 bg-cream-dark">
+    <section id="services" className="py-32 md:py-44 bg-obsidian">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
+        {/* Header */}
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-8"
         >
-          <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">What We Offer</p>
-          <h2 className="font-display text-4xl md:text-5xl text-charcoal mb-4">
-            Bespoke Services
-          </h2>
-          <p className="text-warm-gray max-w-2xl mx-auto text-lg">
-            From intimate gatherings to grand celebrations, every event receives our unwavering attention to detail.
+          <div>
+            <p className="font-cinzel text-[8px] tracking-[0.5em] uppercase text-gold/55 mb-5 flex items-center gap-3">
+              <span className="w-8 h-px bg-gold/55" />
+              What We Offer
+            </p>
+            <h2 className="font-display text-5xl md:text-6xl text-white leading-[1.05]">
+              Bespoke Services
+            </h2>
+          </div>
+          <p className="text-white/30 max-w-sm text-[15px] leading-relaxed md:text-right">
+            From intimate gatherings to grand celebrations, every event receives
+            our unwavering attention to detail.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Service grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.04]">
           {services.map((service, index) => (
             <motion.div
               key={service.id}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group cursor-pointer"
+              transition={{ duration: 0.6, delay: index * 0.08 }}
+              className="group relative aspect-4/5 overflow-hidden cursor-pointer bg-obsidian"
             >
-              <div className="relative aspect-[4/3] overflow-hidden mb-6">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
-                <div className="absolute top-4 right-4 w-10 h-10 bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ArrowUpRight className="w-5 h-5 text-charcoal" />
-                </div>
+              <Image
+                src={service.image}
+                alt={service.title}
+                fill
+                className="object-cover opacity-50 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 ease-out"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-obsidian/95 via-obsidian/25 to-transparent" />
+
+              {/* Gold border on hover */}
+              <div className="absolute inset-2 border border-transparent group-hover:border-gold/35 transition-all duration-500" />
+
+              {/* Roman numeral */}
+              <span className="absolute top-6 right-7 font-display text-5xl text-gold/15 leading-none select-none group-hover:text-gold/35 transition-colors duration-500">
+                {romanNumerals[index]}
+              </span>
+
+              {/* Text content */}
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <p className="font-cinzel text-[7px] tracking-[0.42em] uppercase text-gold/55 mb-3">
+                  {service.category}
+                </p>
+                <h3 className="font-display text-2xl text-white mb-3 group-hover:text-gold transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-white/40 text-sm leading-relaxed translate-y-3 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                  {service.description}
+                </p>
               </div>
-              <h3 className="font-display text-2xl text-charcoal mb-2 group-hover:text-gold transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-warm-gray leading-relaxed">
-                {service.description}
-              </p>
             </motion.div>
           ))}
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-5 mt-16"
+        >
+          <a
+            href="/services"
+            className="inline-flex items-center gap-3 px-10 py-4 border border-gold/40 text-gold font-cinzel text-[9px] tracking-[0.38em] uppercase hover:bg-gold hover:text-obsidian transition-all duration-400"
+          >
+            View All Services &amp; Pricing
+          </a>
+          <a
+            href="/#contact"
+            className="inline-flex items-center gap-3 px-10 py-4 text-white/40 font-cinzel text-[9px] tracking-[0.38em] uppercase hover:text-white/70 transition-colors duration-300"
+          >
+            Enquire Directly
+            <span className="w-5 h-px bg-white/25" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );

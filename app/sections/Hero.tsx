@@ -2,167 +2,174 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 import Image from "next/image";
+
+const stats = [
+  { value: "40+", label: "Years of Heritage" },
+  { value: "500+", label: "Weddings Crafted" },
+  { value: "10,000+", label: "Events Delivered" },
+  { value: "4", label: "Generations" },
+];
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end start"]
+    offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "7%"]);
 
   return (
     <section
       ref={containerRef}
       id="home"
-      className="relative h-screen min-h-screen flex items-center justify-center overflow-hidden bg-charcoal"
+      className="relative min-h-[100dvh] flex items-end overflow-hidden bg-obsidian"
     >
-      {/* Background - Quiet, Atmospheric */}
-      <motion.div style={{ y }} className="absolute inset-0 z-0">
-        <div className="absolute inset-0">
-          <Image
-            // src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?w=1920&q=90"
-            src={"/image4.png"}
-            alt=""
-            fill
-            priority
-            className="object-cover"
-            quality={95}
-          />
-        </div>
-        <div className="absolute inset-0 bg-linear-to-r from-charcoal/85 via-charcoal/70 to-charcoal/85" />
-        <div className="absolute inset-0 opacity-5 mix-blend-overlay"
-             style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3Cpattern id="a" patternUnits="userSpaceOnUse" width="40" height="40" patternTransform="scale(1) rotate(0)"%3E%3Crect x="0" y="0" width="100%25" height="100%25" fill="transparent"/%3E%3Cpath d="M20 0 L20 40 M0 20 L40 20" stroke="%23ffffff" stroke-width="0.25" opacity="0.2"/%3E%3C/pattern%3E%3C/defs%3E%3Crect width="100%25" height="100%25" fill="url(%23a)"/%3E%3C/svg%3E")', backgroundSize: '40px 40px' }} />
+      {/* Background with Parallax */}
+      <motion.div style={{ y: bgY }} className="absolute inset-0 z-0">
+        <Image
+          src="/image4.png"
+          alt="Dee Gee — Grand Celebration"
+          fill
+          priority
+          className="object-cover"
+          quality={95}
+        />
+        {/* Cinematic layered overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-obsidian/94 via-obsidian/68 to-obsidian/28" />
+        <div className="absolute inset-0 bg-gradient-to-t from-obsidian/85 via-obsidian/15 to-obsidian/25" />
       </motion.div>
 
-      {/* Content - Pure, Quiet, Confident */}
+      {/* Top vignette */}
+      <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-obsidian/50 to-transparent z-[1] pointer-events-none" />
+
+      {/* Decorative vertical line — right side */}
+      <div className="absolute right-[7%] top-0 bottom-0 z-[2] hidden xl:flex flex-col items-center justify-center pointer-events-none">
+        <div className="w-px h-32 bg-gradient-to-b from-transparent to-gold/20" />
+        <div className="my-3 w-px h-full max-h-[180px] bg-gold/10" />
+        <div className="w-px h-32 bg-gradient-to-t from-transparent to-gold/20" />
+      </div>
+
+      {/* Main Content — bottom-left editorial anchoring */}
       <motion.div
-        style={{ opacity }}
-        className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto"
+        style={{ opacity: contentOpacity, y: contentY }}
+        className="relative z-10 w-full px-8 md:px-14 lg:px-[8%] pb-20 lg:pb-28 pt-28"
       >
-        {/* No badge. No establishment. Just the craft. */}
-        
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="mb-6"
+        {/* Eyebrow */}
+        <motion.div
+          initial={{ opacity: 0, x: -24 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.15, duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+          className="flex items-center gap-5 mb-10 lg:mb-12"
         >
-          <span className="block font-display text-5xl md:text-7xl lg:text-8xl 
-                         font-light tracking-tight text-white mb-3">
+          <div className="w-10 h-px bg-gold/50" />
+          <span className="font-cinzel text-[8px] tracking-[0.65em] uppercase text-gold/60">
+            Est. 1985 &nbsp;·&nbsp; Ludhiana, Punjab
+          </span>
+        </motion.div>
+
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 44 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.25, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-8 lg:mb-10"
+        >
+          <span className="block font-display text-[clamp(3rem,7.5vw,7rem)] font-light tracking-[-0.025em] text-white leading-[0.9]">
             Crafting
           </span>
-          <span className="block font-display text-5xl md:text-7xl lg:text-8xl 
-                         font-light tracking-tight text-white">
+          <span className="block font-display text-[clamp(3rem,7.5vw,7rem)] font-light tracking-[-0.025em] text-white leading-[0.9] mt-1">
             Moments
           </span>
-          <span className="relative inline-block mt-4">
-            <span className="font-script text-6xl md:text-7xl lg:text-8xl 
-                           text-gold font-light italic">
-              of Distinction
-            </span>
+          <span className="block font-script text-[clamp(2.6rem,6.2vw,5.8rem)] text-gold leading-[1.2] mt-3">
+            of Distinction
           </span>
         </motion.h1>
 
+        {/* Description */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          className="text-sm md:text-base text-white/50 max-w-xl mx-auto mb-16 
-                     font-light tracking-wide leading-relaxed"
+          transition={{ delay: 0.45, duration: 0.9, ease: "easeOut" }}
+          className="text-white/38 text-[15px] md:text-[16px] max-w-[420px] leading-[2] mb-12 lg:mb-14 font-light"
         >
-          Refined cuisine, seamless execution, and enduring experiences
-          for life's most meaningful celebrations.
+          Four generations of culinary mastery — refining tradition into
+          extraordinary celebrations since 1985.
         </motion.p>
 
+        {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-          className="flex flex-col sm:flex-row gap-8 justify-center items-center"
+          transition={{ delay: 0.6, duration: 0.9, ease: "easeOut" }}
+          className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10 mb-20 lg:mb-24"
         >
           <a
             href="#contact"
-            className="group relative px-0 py-2 overflow-hidden"
+            className="group inline-flex items-center"
           >
-            <span className="relative text-white tracking-[0.4em] uppercase text-[11px] 
-                           font-light flex items-center gap-3">
-              INQUIRE
-              <span className="transform transition-transform duration-300 
-                             group-hover:translate-x-1.5 text-gold text-lg">→</span>
+            <span className="px-8 py-3.5 border border-gold/50 font-cinzel text-[9px] tracking-[0.48em] uppercase text-white hover:bg-gold hover:border-gold hover:text-obsidian transition-all duration-500">
+              Begin Planning
             </span>
-            <span className="absolute bottom-0 left-0 w-0 h-px bg-gold/60 
-                           group-hover:w-full transition-all duration-700" />
           </a>
-          <span className="text-white/10 hidden sm:block">|</span>
           <a
             href="#services"
-            className="group relative px-0 py-2 overflow-hidden"
+            className="group inline-flex items-center gap-4"
           >
-            <span className="relative text-white/50 hover:text-white tracking-[0.4em] 
-                           uppercase text-[11px] font-light transition-colors duration-300">
-            COLLECTION
+            <span className="font-cinzel text-[9px] tracking-[0.5em] uppercase text-white/32 group-hover:text-white/60 transition-colors duration-300">
+              Our Services
             </span>
+            <span className="w-8 h-px bg-white/15 group-hover:w-12 group-hover:bg-white/35 transition-all duration-500" />
           </a>
         </motion.div>
 
-        {/* The only mark of time - quiet, poetic */}
+        {/* Stats strip */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="absolute -left-24 bottom-1/2 translate-y-1/2 -rotate-90 
-                     hidden lg:block"
+          transition={{ delay: 0.85, duration: 0.9 }}
+          className="flex flex-wrap items-stretch border-t border-white/[0.055] pt-8 gap-y-6"
         >
-          <span className="text-[9px] tracking-[0.8em] uppercase text-white/20 
-                         font-light">
-            FOUR GENERATIONS
-          </span>
-        </motion.div>
-
-        {/* Craft as heritage */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="absolute -right-24 bottom-1/2 translate-y-1/2 rotate-90 
-                     hidden lg:block"
-        >
-          <span className="text-[9px] tracking-[0.8em] uppercase text-white/20 
-                         font-light">
-            SINCE 1985
-          </span>
+          {stats.map((stat, i) => (
+            <div
+              key={i}
+              className={`pr-8 lg:pr-14 ${
+                i > 0 ? "pl-8 lg:pl-14 border-l border-white/[0.055]" : ""
+              }`}
+            >
+              <div className="font-display text-2xl lg:text-3xl text-gold leading-none mb-2">
+                {stat.value}
+              </div>
+              <div className="font-cinzel text-[7px] tracking-[0.4em] uppercase text-white/22">
+                {stat.label}
+              </div>
+            </div>
+          ))}
         </motion.div>
       </motion.div>
 
-      {/* Scroll - Barely there */}
+      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2"
+        transition={{ delay: 1.3 }}
+        className="absolute bottom-8 right-10 lg:right-[7%] z-10 flex flex-col items-center gap-4 pointer-events-none"
       >
         <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-2 cursor-pointer"
-        >
-          <span className="text-[7px] tracking-[0.8em] uppercase text-white/20">
-            EXPLORE
-          </span>
-          <ChevronDown className="w-3.5 h-3.5 text-white/20" />
-        </motion.div>
+          animate={{ scaleY: [0.4, 1, 0.4] }}
+          transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+          className="w-px h-12 bg-gradient-to-b from-white/25 to-transparent origin-top"
+        />
+        <span className="font-cinzel text-[6px] tracking-[0.7em] uppercase text-white/18">
+          Scroll
+        </span>
       </motion.div>
 
-      {/* No stats. No numbers. No validation. Just presence. */}
-      
-      {/* Single, quiet line */}
-      <div className="absolute bottom-20 left-12 right-12 h-px bg-linear-to-r 
-                     from-transparent via-white/10 to-transparent" />
+      {/* Bottom edge fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-obsidian/30 to-transparent z-[1] pointer-events-none" />
     </section>
   );
 }

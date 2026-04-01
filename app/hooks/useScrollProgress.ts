@@ -6,10 +6,10 @@ import { RefObject } from "react";
 
 interface ScrollProgressOptions {
   target: RefObject<HTMLElement>;
-  offset?: [string, string];
+  offset?: ["start start" | "end start", "start start" | "end start"];
 }
 
-export function useScrollProgress({ target, offset = ["start start", "end start"] as any }: ScrollProgressOptions) {
+export function useScrollProgress({ target, offset = ["start start", "end start"] }: ScrollProgressOptions) {
   const { scrollYProgress } = useScroll({
     target,
     offset,

@@ -1,101 +1,125 @@
-// app/sections/Testimonials.tsx
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { testimonials } from "@/app/lib/data";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 export function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
-  const next = () => setActiveIndex((prev) => (prev + 1) % testimonials.length);
-  const prev = () => setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % testimonials.length);
+    }, 6500);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
-    <section className="py-24 md:py-32 bg-blush relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-      
-      <div className="max-w-5xl mx-auto px-6 lg:px-8">
+    <section className="py-32 md:py-44 bg-obsidian relative overflow-hidden">
+      {/* Top & bottom gold rules */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+
+      {/* Subtle radial glow behind quote */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="w-[600px] h-[600px] rounded-full bg-gold/[0.025] blur-3xl" />
+      </div>
+
+      <div className="max-w-4xl mx-auto px-6 lg:px-8 relative">
+
+        {/* Header */}
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-16 lg:mb-20"
         >
-          <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">Client Stories</p>
-          <h2 className="font-display text-4xl md:text-5xl text-charcoal">
-            Words of Appreciation
+          <div className="flex items-center justify-center gap-5 mb-6">
+            <div className="w-10 h-px bg-gold/35" />
+            <span className="font-cinzel text-[8px] tracking-[0.6em] uppercase text-gold/55">
+              Client Stories
+            </span>
+            <div className="w-10 h-px bg-gold/35" />
+          </div>
+          <h2 className="font-display text-5xl md:text-6xl text-white leading-[1.05]">
+            Words of
+            <em className="text-gold not-italic"> Appreciation</em>
           </h2>
         </motion.div>
 
-        <div className="relative">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeIndex}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.5 }}
-              className="text-center"
-            >
-              <Quote className="w-12 h-12 text-gold/30 mx-auto mb-8" />
-              <p className="font-display text-2xl md:text-3xl text-charcoal leading-relaxed mb-8 italic">
-                "{testimonials[activeIndex].content}"
-              </p>
-              <div className="flex items-center justify-center gap-4">
-                <div className="relative w-16 h-16 rounded-full overflow-hidden">
-                  <Image
-                    src={testimonials[activeIndex].image}
-                    alt={testimonials[activeIndex].name}
-                    fill
-                    className="object-cover"
-                  />
+        {/* Ornament */}
+        <motion.div
+          initial={{ opacity: 0, scaleX: 0 }}
+          animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
+          transition={{ duration: 0.9, delay: 0.2 }}
+          className="flex items-center gap-5 mb-16 justify-center"
+        >
+          <div className="flex-1 max-w-[120px] h-px bg-gradient-to-r from-transparent to-gold/25" />
+          <span className="text-gold/35 text-sm select-none">✦</span>
+          <div className="w-1.5 h-1.5 rounded-full bg-gold/30" />
+          <span className="text-gold/35 text-sm select-none">✦</span>
+          <div className="flex-1 max-w-[120px] h-px bg-gradient-to-l from-transparent to-gold/25" />
+        </motion.div>
+
+        {/* Carousel */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeIndex}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -18 }}
+            transition={{ duration: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
+            className="text-center"
+          >
+            {/* Opening mark */}
+            <div className="font-display text-[7rem] text-gold/10 leading-none select-none -mb-6">
+              &ldquo;
+            </div>
+
+            <blockquote className="font-body text-xl md:text-2xl lg:text-[1.55rem] text-white/65 leading-[1.95] italic mb-12 max-w-3xl mx-auto">
+              {testimonials[activeIndex].content}
+            </blockquote>
+
+            {/* Author */}
+            <div className="flex items-center justify-center gap-5">
+              <div className="relative w-12 h-12 rounded-full overflow-hidden ring-1 ring-gold/30 ring-offset-2 ring-offset-obsidian">
+                <Image
+                  src={testimonials[activeIndex].image}
+                  alt={testimonials[activeIndex].name}
+                  fill
+                  className="object-cover grayscale"
+                />
+              </div>
+              <div className="text-left">
+                <div className="font-display text-[16px] text-white/90 mb-1">
+                  {testimonials[activeIndex].name}
                 </div>
-                <div className="text-left">
-                  <div className="font-display text-lg text-charcoal">
-                    {testimonials[activeIndex].name}
-                  </div>
-                  <div className="text-sm text-warm-gray">
-                    {testimonials[activeIndex].role}
-                  </div>
+                <div className="font-cinzel text-[7px] tracking-[0.35em] uppercase text-gold/50">
+                  {testimonials[activeIndex].role} &nbsp;·&nbsp; {testimonials[activeIndex].date}
                 </div>
               </div>
-            </motion.div>
-          </AnimatePresence>
+            </div>
+          </motion.div>
+        </AnimatePresence>
 
-          {/* Navigation */}
-          <div className="flex justify-center gap-4 mt-12">
+        {/* Progress indicators */}
+        <div className="flex justify-center items-center gap-3 mt-14">
+          {testimonials.map((_, i) => (
             <button
-              onClick={prev}
-              className="w-12 h-12 border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-white transition-colors"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={next}
-              className="w-12 h-12 border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-white transition-colors"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
-
-          {/* Dots */}
-          <div className="flex justify-center gap-2 mt-6">
-            {testimonials.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveIndex(i)}
-                className={`w-2 h-2 rounded-full transition-colors ${
-                  i === activeIndex ? "bg-gold" : "bg-gold/30"
-                }`}
-              />
-            ))}
-          </div>
+              key={i}
+              onClick={() => setActiveIndex(i)}
+              aria-label={`Testimonial ${i + 1}`}
+              className={`h-px transition-all duration-500 ${
+                i === activeIndex
+                  ? "w-10 bg-gold"
+                  : "w-3 bg-white/18 hover:bg-white/35"
+              }`}
+            />
+          ))}
         </div>
       </div>
     </section>

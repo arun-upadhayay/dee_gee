@@ -6,8 +6,8 @@ import { Services } from "@/app/sections/Services";
 import { Menu } from "@/app/sections/Menu";
 import { Testimonials } from "@/app/sections/Testimonials";
 import { Gallery } from "@/app/sections/Gallery";
-import { Contact } from "@/app/sections/Contact";
 import { Footer } from "@/app/sections/Footer";
+import Contact from "./sections/Contact";
 
 export default function Home() {
   return (

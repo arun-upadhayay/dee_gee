@@ -65,7 +65,7 @@ export function Footer() {
       <div className="border-b border-white/4 px-6 lg:px-8 py-16">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div>
-            <p className="font-cinzel text-[8px] tracking-[0.5em] uppercase text-gold/45 mb-4">
+            <p className="font-cinzel text-[11px] tracking-[0.45em] uppercase text-gold/65 mb-4">
               Begin Planning
             </p>
             <h3 className="font-display text-3xl md:text-4xl text-white leading-tight">
@@ -99,10 +99,10 @@ export function Footer() {
             </div>
 
             <div className="space-y-2">
-              <p className="font-cinzel text-[7px] tracking-[0.48em] uppercase text-gold/38">
+              <p className="font-cinzel text-[10px] tracking-[0.42em] uppercase text-gold/60">
                 Est. 1985 · Ludhiana, India
               </p>
-              <p className="text-white/32 leading-relaxed text-sm max-w-xs font-body">
+              <p className="text-white/60 leading-relaxed text-sm max-w-xs font-body">
                 Imaginative catering for discerning hosts — where four decades of
                 culinary excellence meet contemporary elegance.
               </p>
@@ -128,7 +128,7 @@ export function Footer() {
           <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-10">
             {Object.entries(footerLinks).map(([title, links]) => (
               <div key={title}>
-                <h4 className="font-cinzel text-[7px] tracking-[0.45em] uppercase text-gold/42 mb-6">
+                <h4 className="font-cinzel text-[10px] tracking-[0.4em] uppercase text-gold/65 mb-6">
                   {title}
                 </h4>
                 <ul className="space-y-3.5">
@@ -136,7 +136,7 @@ export function Footer() {
                     <li key={link.label}>
                       <a
                         href={link.href}
-                        className="text-white/28 hover:text-white/65 text-sm transition-colors duration-300 font-body"
+                        className="text-white/55 hover:text-white/90 text-sm transition-colors duration-300 font-body"
                       >
                         {link.label}
                       </a>
@@ -152,21 +152,21 @@ export function Footer() {
         <div className="my-14 h-px bg-linear-to-r from-transparent via-gold/18 to-transparent" />
 
         {/* Bottom bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 font-cinzel text-[9px] text-white/18 tracking-wider">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 font-cinzel text-[10px] text-white/42 tracking-wider">
           <p>© {currentYear} Dee Gee Catering & Events. All rights reserved.</p>
 
-          <div className="flex items-center gap-2 text-white/12">
-            <span className="w-4 h-px bg-white/10" />
-            <span className="tracking-[0.28em] uppercase text-[8px]">
+          <div className="flex items-center gap-2 text-white/30">
+            <span className="w-4 h-px bg-white/20" />
+            <span className="tracking-[0.28em] uppercase text-[9px]">
               Crafted with excellence
             </span>
             <span className="w-4 h-px bg-white/10" />
           </div>
 
           <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-white/45 transition-colors duration-300">Privacy</a>
-            <a href="#" className="hover:text-white/45 transition-colors duration-300">Terms</a>
-            <a href="#" className="hover:text-white/45 transition-colors duration-300">Cookies</a>
+            <a href="#" className="hover:text-white/75 transition-colors duration-300">Privacy</a>
+            <a href="#" className="hover:text-white/75 transition-colors duration-300">Terms</a>
+            <a href="#" className="hover:text-white/75 transition-colors duration-300">Cookies</a>
           </div>
         </div>
       </div>

@@ -27,7 +27,7 @@ export function Story() {
           className="flex items-center gap-4 mb-20"
         >
           <div className="w-10 h-px bg-gold" />
-          <p className="font-cinzel text-[8px] tracking-[0.6em] uppercase text-gold/70">
+          <p className="font-cinzel text-[11px] tracking-[0.5em] uppercase text-gold/80">
             Our Heritage
           </p>
         </motion.div>
@@ -68,7 +68,7 @@ export function Story() {
               <p className="font-script text-4xl text-gold leading-none mb-1">Since</p>
               <p className="font-display text-5xl text-white leading-none">1985</p>
               <div className="mt-4 w-8 h-px bg-gold/40" />
-              <p className="mt-3 font-cinzel text-[7px] tracking-[0.35em] uppercase text-white/35 leading-relaxed">
+              <p className="mt-3 font-cinzel text-[10px] tracking-[0.3em] uppercase text-white/55 leading-relaxed">
                 Four generations of<br />culinary craft
               </p>
             </div>
@@ -116,7 +116,7 @@ export function Story() {
               {stats.map((stat) => (
                 <div key={stat.label} className="bg-cream p-6 text-center">
                   <div className="font-display text-3xl text-gold mb-1.5">{stat.value}</div>
-                  <div className="font-cinzel text-[7px] tracking-[0.38em] uppercase text-warm-gray">
+                  <div className="font-cinzel text-[10px] tracking-[0.32em] uppercase text-warm-gray">
                     {stat.label}
                   </div>
                 </div>
@@ -128,7 +128,7 @@ export function Story() {
               href="/#contact"
               whileHover={{ x: 6 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="inline-flex items-center gap-3 mt-12 font-cinzel text-[9px] tracking-[0.42em] uppercase text-charcoal border-b border-charcoal/30 pb-1 hover:text-gold hover:border-gold transition-colors duration-300"
+              className="inline-flex items-center gap-3 mt-12 font-cinzel text-xs tracking-[0.42em] uppercase text-charcoal border-b border-charcoal/30 pb-1 hover:text-gold hover:border-gold transition-colors duration-300"
             >
               Begin Your Journey
               <span className="text-base">→</span>

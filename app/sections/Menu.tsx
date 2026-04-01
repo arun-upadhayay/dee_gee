@@ -25,7 +25,7 @@ export function Menu() {
         >
           <div className="flex items-center justify-center gap-5 mb-6">
             <div className="w-8 h-px bg-gold/60" />
-            <span className="font-cinzel text-[8px] tracking-[0.6em] uppercase text-gold/70">
+            <span className="font-cinzel text-[11px] tracking-[0.5em] uppercase text-gold/80">
               Culinary Excellence
             </span>
             <div className="w-8 h-px bg-gold/60" />
@@ -45,7 +45,7 @@ export function Menu() {
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`relative px-6 py-4 font-cinzel text-[9px] tracking-[0.38em] uppercase transition-colors duration-300 ${
+              className={`relative px-6 py-4 font-cinzel text-xs tracking-[0.38em] uppercase transition-colors duration-300 ${
                 activeCategory === cat.id
                   ? "text-charcoal"
                   : "text-warm-gray hover:text-charcoal"
@@ -87,7 +87,7 @@ export function Menu() {
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="hidden md:inline font-cinzel text-[7px] tracking-[0.32em] uppercase text-gold/60 border border-gold/22 px-2 py-0.5"
+                        className="hidden md:inline font-cinzel text-[10px] tracking-[0.28em] uppercase text-gold/70 border border-gold/30 px-2 py-0.5"
                       >
                         {tag}
                       </span>
@@ -112,7 +112,7 @@ export function Menu() {
           </p>
           <a
             href="/#contact"
-            className="inline-flex items-center gap-3 px-10 py-4 bg-charcoal text-cream font-cinzel text-[9px] tracking-[0.38em] uppercase hover:bg-gold hover:text-charcoal transition-all duration-400"
+            className="inline-flex items-center gap-3 px-10 py-4 bg-charcoal text-cream font-cinzel text-xs tracking-[0.38em] uppercase hover:bg-gold hover:text-charcoal transition-all duration-400"
           >
             Request Custom Menu
           </a>

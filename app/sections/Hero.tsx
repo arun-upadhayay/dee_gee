@@ -66,7 +66,7 @@ export function Hero() {
           className="flex items-center gap-5 mb-10 lg:mb-12"
         >
           <div className="w-10 h-px bg-gold/50" />
-          <span className="font-cinzel text-[8px] tracking-[0.65em] uppercase text-gold/60">
+          <span className="font-cinzel text-[11px] tracking-[0.55em] uppercase text-gold/75">
             Est. 1985 &nbsp;·&nbsp; Ludhiana, Punjab
           </span>
         </motion.div>
@@ -94,7 +94,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.9, ease: "easeOut" }}
-          className="text-white/38 text-[15px] md:text-[16px] max-w-[420px] leading-[2] mb-12 lg:mb-14 font-light"
+          className="text-white/72 text-[16px] max-w-[440px] leading-[2] mb-12 lg:mb-14 font-light"
         >
           Four generations of culinary mastery — refining tradition into
           extraordinary celebrations since 1985.
@@ -111,7 +111,7 @@ export function Hero() {
             href="#contact"
             className="group inline-flex items-center"
           >
-            <span className="px-8 py-3.5 border border-gold/50 font-cinzel text-[9px] tracking-[0.48em] uppercase text-white hover:bg-gold hover:border-gold hover:text-obsidian transition-all duration-500">
+            <span className="px-8 py-3.5 border border-gold/60 font-cinzel text-xs tracking-[0.42em] uppercase text-white hover:bg-gold hover:border-gold hover:text-obsidian transition-all duration-500">
               Begin Planning
             </span>
           </a>
@@ -119,7 +119,7 @@ export function Hero() {
             href="#services"
             className="group inline-flex items-center gap-4"
           >
-            <span className="font-cinzel text-[9px] tracking-[0.5em] uppercase text-white/32 group-hover:text-white/60 transition-colors duration-300">
+            <span className="font-cinzel text-xs tracking-[0.42em] uppercase text-white/55 group-hover:text-white/80 transition-colors duration-300">
               Our Services
             </span>
             <span className="w-8 h-px bg-white/15 group-hover:w-12 group-hover:bg-white/35 transition-all duration-500" />
@@ -143,7 +143,7 @@ export function Hero() {
               <div className="font-display text-2xl lg:text-3xl text-gold leading-none mb-2">
                 {stat.value}
               </div>
-              <div className="font-cinzel text-[7px] tracking-[0.4em] uppercase text-white/22">
+              <div className="font-cinzel text-[10px] tracking-[0.35em] uppercase text-white/50">
                 {stat.label}
               </div>
             </div>
@@ -163,7 +163,7 @@ export function Hero() {
           transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
           className="w-px h-12 bg-gradient-to-b from-white/25 to-transparent origin-top"
         />
-        <span className="font-cinzel text-[6px] tracking-[0.7em] uppercase text-white/18">
+        <span className="font-cinzel text-[9px] tracking-[0.55em] uppercase text-white/38">
           Scroll
         </span>
       </motion.div>

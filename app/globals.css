@@ -23,9 +23,9 @@
   --color-charcoal: #1E1C1A;
   --color-charcoal-light: #3C3830;
 
-  /* ─── Stone ─── */
-  --color-warm-gray: #847A70;
-  --color-warm-gray-light: #A8A09A;
+  /* ─── Stone (darkened for 5.5:1+ contrast on cream) ─── */
+  --color-warm-gray: #635850;
+  --color-warm-gray-light: #928880;
 
   /* ─── Fonts ─── */
   --font-display: var(--font-playfair), "Playfair Display", serif;

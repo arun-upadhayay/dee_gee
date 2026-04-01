@@ -33,7 +33,7 @@ export function Gallery() {
           className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-10"
         >
           <div>
-            <p className="text-[10px] tracking-[0.45em] uppercase text-gold mb-5 flex items-center gap-3">
+            <p className="font-cinzel text-[11px] tracking-[0.45em] uppercase text-gold mb-5 flex items-center gap-3">
               <span className="w-8 h-px bg-gold" />
               Portfolio
             </p>
@@ -50,7 +50,7 @@ export function Gallery() {
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-4 py-2 text-[9px] tracking-[0.32em] uppercase transition-all duration-300 ${
+                className={`px-4 py-2 font-cinzel text-xs tracking-[0.3em] uppercase transition-all duration-300 ${
                   activeFilter === cat
                     ? "bg-charcoal text-cream"
                     : "text-warm-gray border border-charcoal/20 hover:border-charcoal hover:text-charcoal"
@@ -94,7 +94,7 @@ export function Gallery() {
 
                 {/* Caption */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400 text-white text-center p-6">
-                  <p className="text-[8px] tracking-[0.42em] uppercase text-gold mb-2">
+                  <p className="font-cinzel text-[11px] tracking-[0.38em] uppercase text-gold mb-2">
                     {image.category}
                   </p>
                   <h3 className="font-display text-lg md:text-xl leading-tight">
@@ -152,7 +152,7 @@ export function Gallery() {
               <p className="font-display text-2xl text-white mb-1.5">
                 {selectedImage.title}
               </p>
-              <p className="text-[9px] tracking-[0.42em] uppercase text-gold">
+              <p className="font-cinzel text-xs tracking-[0.38em] uppercase text-gold">
                 {selectedImage.category}
               </p>
             </div>

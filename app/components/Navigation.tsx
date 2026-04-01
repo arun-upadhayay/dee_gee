@@ -57,7 +57,7 @@ export function Navigation() {
             <a
               key={link.name}
               href={link.href}
-              className={`group relative font-cinzel text-[9px] tracking-[0.38em] uppercase transition-colors duration-300 ${
+              className={`group relative font-cinzel text-xs tracking-[0.35em] uppercase transition-colors duration-300 ${
                 isScrolled ? "text-charcoal" : "text-white/80"
               } hover:text-gold`}
             >
@@ -68,7 +68,7 @@ export function Navigation() {
 
           <a
             href="/#contact"
-            className={`ml-2 px-6 py-2.5 border font-cinzel text-[9px] tracking-[0.38em] uppercase transition-all duration-400 ${
+            className={`ml-2 px-6 py-2.5 border font-cinzel text-xs tracking-[0.35em] uppercase transition-all duration-400 ${
               isScrolled
                 ? "border-gold/60 text-gold hover:bg-gold hover:text-obsidian"
                 : "border-white/30 text-white hover:border-gold hover:text-gold"

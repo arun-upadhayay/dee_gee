@@ -31,11 +31,11 @@ export function ServicesHero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="flex items-center gap-3 mb-8"
         >
-          <a href="/" className="font-cinzel text-[8px] tracking-[0.5em] uppercase text-white/30 hover:text-white/55 transition-colors">
+          <a href="/" className="font-cinzel text-[11px] tracking-[0.5em] uppercase text-white/55 hover:text-white/80 transition-colors">
             Home
           </a>
           <span className="text-white/20 text-[10px]">/</span>
-          <span className="font-cinzel text-[8px] tracking-[0.5em] uppercase text-gold/60">
+          <span className="font-cinzel text-[11px] tracking-[0.5em] uppercase text-gold/60">
             Services
           </span>
         </motion.div>
@@ -47,7 +47,7 @@ export function ServicesHero() {
           className="flex items-center gap-4 mb-6"
         >
           <div className="w-10 h-px bg-gold/50" />
-          <span className="font-cinzel text-[8px] tracking-[0.6em] uppercase text-gold/55">
+          <span className="font-cinzel text-[11px] tracking-[0.6em] uppercase text-gold/55">
             What We Offer
           </span>
         </motion.div>

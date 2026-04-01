@@ -47,7 +47,7 @@ export function ProcessSteps() {
           className="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-8"
         >
           <div>
-            <p className="font-cinzel text-[8px] tracking-[0.6em] uppercase text-gold mb-5 flex items-center gap-3">
+            <p className="font-cinzel text-[11px] tracking-[0.6em] uppercase text-gold mb-5 flex items-center gap-3">
               <span className="w-8 h-px bg-gold" />
               How We Work
             </p>
@@ -59,7 +59,7 @@ export function ProcessSteps() {
           </div>
           <a
             href="/contact"
-            className="group shrink-0 inline-flex items-center gap-4 border border-gold/40 px-8 py-4 text-gold font-cinzel text-[9px] tracking-[0.42em] uppercase hover:bg-gold hover:text-obsidian transition-all duration-400"
+            className="group shrink-0 inline-flex items-center gap-4 border border-gold/40 px-8 py-4 text-gold font-cinzel text-xs tracking-[0.42em] uppercase hover:bg-gold hover:text-obsidian transition-all duration-400"
           >
             Begin Your Journey
           </a>
@@ -107,7 +107,7 @@ export function ProcessSteps() {
           </div>
           <a
             href="/#contact"
-            className="shrink-0 px-10 py-4 bg-charcoal text-cream font-cinzel text-[9px] tracking-[0.42em] uppercase hover:bg-gold hover:text-charcoal transition-all duration-400"
+            className="shrink-0 px-10 py-4 bg-charcoal text-cream font-cinzel text-xs tracking-[0.42em] uppercase hover:bg-gold hover:text-charcoal transition-all duration-400"
           >
             Get in Touch
           </a>

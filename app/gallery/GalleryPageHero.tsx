@@ -30,7 +30,7 @@ export function GalleryPageHero() {
           className="flex items-center gap-4 mb-6"
         >
           <div className="w-10 h-px bg-gold/50" />
-          <span className="font-cinzel text-[8px] tracking-[0.6em] uppercase text-gold/55">
+          <span className="font-cinzel text-[11px] tracking-[0.6em] uppercase text-gold/55">
             Portfolio
           </span>
         </motion.div>
@@ -50,7 +50,7 @@ export function GalleryPageHero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35 }}
-          className="mt-5 text-white/35 text-[15px] max-w-md leading-relaxed"
+          className="mt-5 text-white/70 text-[15px] max-w-md leading-relaxed"
         >
           A curated selection from four decades of celebrations — each one
           unique, each one unforgettable.

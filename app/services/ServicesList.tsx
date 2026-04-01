@@ -68,7 +68,7 @@ export function ServicesList() {
           transition={{ duration: 0.8 }}
           className="mb-20 max-w-xl"
         >
-          <p className="font-cinzel text-[8px] tracking-[0.6em] uppercase text-gold mb-5 flex items-center gap-3">
+          <p className="font-cinzel text-[11px] tracking-[0.6em] uppercase text-gold mb-5 flex items-center gap-3">
             <span className="w-8 h-px bg-gold" />
             Six Pillars of Excellence
           </p>
@@ -110,7 +110,7 @@ export function ServicesList() {
 
                 {/* Text */}
                 <div className="flex-1">
-                  <p className="font-cinzel text-[7px] tracking-[0.45em] uppercase text-gold/60 mb-2">
+                  <p className="font-cinzel text-[10px] tracking-[0.45em] uppercase text-gold/60 mb-2">
                     {service.category}
                   </p>
                   <h3 className="font-display text-2xl md:text-3xl text-charcoal mb-3 group-hover:text-gold transition-colors duration-300">
@@ -135,7 +135,7 @@ export function ServicesList() {
               <div className="hidden md:flex items-center ml-10">
                 <a
                   href="#contact"
-                  className="group/btn flex items-center gap-2 font-cinzel text-[8px] tracking-[0.4em] uppercase text-gold/50 hover:text-gold transition-colors duration-300"
+                  className="group/btn flex items-center gap-2 font-cinzel text-[11px] tracking-[0.4em] uppercase text-gold/50 hover:text-gold transition-colors duration-300"
                 >
                   Enquire
                   <span className="w-4 h-px bg-gold/40 group-hover/btn:w-7 group-hover/btn:bg-gold transition-all duration-400" />

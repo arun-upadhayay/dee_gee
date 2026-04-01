@@ -40,7 +40,7 @@ export function Testimonials() {
         >
           <div className="flex items-center justify-center gap-5 mb-6">
             <div className="w-10 h-px bg-gold/35" />
-            <span className="font-cinzel text-[8px] tracking-[0.6em] uppercase text-gold/55">
+            <span className="font-cinzel text-[11px] tracking-[0.5em] uppercase text-gold/75">
               Client Stories
             </span>
             <div className="w-10 h-px bg-gold/35" />
@@ -98,7 +98,7 @@ export function Testimonials() {
                 <div className="font-display text-[16px] text-white/90 mb-1">
                   {testimonials[activeIndex].name}
                 </div>
-                <div className="font-cinzel text-[7px] tracking-[0.35em] uppercase text-gold/50">
+                <div className="font-cinzel text-[10px] tracking-[0.3em] uppercase text-gold/70">
                   {testimonials[activeIndex].role} &nbsp;·&nbsp; {testimonials[activeIndex].date}
                 </div>
               </div>

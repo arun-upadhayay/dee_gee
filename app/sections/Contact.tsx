@@ -64,7 +64,7 @@ export default function Contact() {
         >
           <div className="flex items-center gap-4 mb-6">
             <div className="w-10 h-px bg-gold" />
-            <span className="font-cinzel text-[8px] tracking-[0.6em] uppercase text-gold/70">
+            <span className="font-cinzel text-[11px] tracking-[0.5em] uppercase text-gold/80">
               Private Consultation
             </span>
           </div>
@@ -84,7 +84,7 @@ export default function Contact() {
         >
           {processSteps.map((step) => (
             <div key={step.num} className="bg-cream-dark py-7 px-6 text-center">
-              <span className="font-cinzel text-[9px] tracking-[0.4em] text-gold/50 block mb-3">
+              <span className="font-cinzel text-[11px] tracking-[0.35em] text-gold/65 block mb-3">
                 {step.num}
               </span>
               <span className="font-display text-[15px] text-charcoal block mb-1">
@@ -121,7 +121,7 @@ export default function Contact() {
                 >
                   <Icon className="w-3.5 h-3.5 text-gold mt-0.5 shrink-0 mt-1" />
                   <div>
-                    <p className="font-cinzel text-[7px] tracking-[0.45em] uppercase text-warm-gray/70 mb-1.5">
+                    <p className="font-cinzel text-[10px] tracking-[0.4em] uppercase text-warm-gray/70 mb-1.5">
                       {label}
                     </p>
                     {href ? (
@@ -152,7 +152,7 @@ export default function Contact() {
 
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <label className="block font-cinzel text-[7px] tracking-[0.45em] uppercase text-warm-gray mb-3">
+                  <label className="block font-cinzel text-[10px] tracking-[0.4em] uppercase text-warm-gray mb-3">
                     Your Name *
                   </label>
                   <input
@@ -163,7 +163,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label className="block font-cinzel text-[7px] tracking-[0.45em] uppercase text-warm-gray mb-3">
+                  <label className="block font-cinzel text-[10px] tracking-[0.4em] uppercase text-warm-gray mb-3">
                     Email *
                   </label>
                   <input
@@ -177,7 +177,7 @@ export default function Contact() {
 
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <label className="block font-cinzel text-[7px] tracking-[0.45em] uppercase text-warm-gray mb-3">
+                  <label className="block font-cinzel text-[10px] tracking-[0.4em] uppercase text-warm-gray mb-3">
                     Phone
                   </label>
                   <input
@@ -187,7 +187,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label className="block font-cinzel text-[7px] tracking-[0.45em] uppercase text-warm-gray mb-3">
+                  <label className="block font-cinzel text-[10px] tracking-[0.4em] uppercase text-warm-gray mb-3">
                     Occasion
                   </label>
                   <select
@@ -206,7 +206,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block font-cinzel text-[7px] tracking-[0.45em] uppercase text-warm-gray mb-3">
+                <label className="block font-cinzel text-[10px] tracking-[0.4em] uppercase text-warm-gray mb-3">
                   Guest Count &amp; Event Date
                 </label>
                 <input
@@ -217,7 +217,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block font-cinzel text-[7px] tracking-[0.45em] uppercase text-warm-gray mb-3">
+                <label className="block font-cinzel text-[10px] tracking-[0.4em] uppercase text-warm-gray mb-3">
                   Your Vision
                 </label>
                 <textarea
@@ -231,7 +231,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={formStatus === "success"}
-                  className={`px-10 py-4 font-cinzel text-[9px] tracking-[0.42em] uppercase transition-all duration-500 ${
+                  className={`px-10 py-4 font-cinzel text-xs tracking-[0.42em] uppercase transition-all duration-500 ${
                     formStatus === "success"
                       ? "bg-gold text-charcoal cursor-default"
                       : "bg-charcoal text-cream hover:bg-gold hover:text-charcoal"
@@ -239,7 +239,7 @@ export default function Contact() {
                 >
                   {formStatus === "success" ? "Enquiry Received" : "Send Enquiry"}
                 </button>
-                <p className="font-cinzel text-[8px] text-warm-gray/45 leading-relaxed tracking-wide">
+                <p className="font-cinzel text-[10px] text-warm-gray/80 leading-relaxed tracking-wide">
                   We respond<br />within 24 hours
                 </p>
               </div>

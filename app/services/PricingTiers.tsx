@@ -93,7 +93,7 @@ export function PricingTiers() {
         >
           <div className="flex items-center justify-center gap-5 mb-6">
             <div className="w-10 h-px bg-gold/35" />
-            <span className="font-cinzel text-[8px] tracking-[0.6em] uppercase text-gold/55">
+            <span className="font-cinzel text-[11px] tracking-[0.6em] uppercase text-gold/55">
               Investment
             </span>
             <div className="w-10 h-px bg-gold/35" />
@@ -101,7 +101,7 @@ export function PricingTiers() {
           <h2 className="font-display text-5xl md:text-6xl text-white leading-[1.05] mb-6">
             Curated Packages
           </h2>
-          <p className="text-white/38 text-[15px] max-w-md mx-auto leading-relaxed">
+          <p className="text-white/68 text-[15px] max-w-md mx-auto leading-relaxed">
             Every package is a starting point — each celebration we craft is
             ultimately as unique as the families we serve.
           </p>
@@ -124,7 +124,7 @@ export function PricingTiers() {
               {/* Highlight badge */}
               {tier.highlighted && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="bg-gold text-obsidian font-cinzel text-[7px] tracking-[0.45em] uppercase px-4 py-1.5">
+                  <span className="bg-gold text-obsidian font-cinzel text-[10px] tracking-[0.45em] uppercase px-4 py-1.5">
                     Most Popular
                   </span>
                 </div>
@@ -132,7 +132,7 @@ export function PricingTiers() {
 
               {/* Tier name */}
               <div className="mb-8">
-                <p className={`font-cinzel text-[7px] tracking-[0.5em] uppercase mb-3 ${
+                <p className={`font-cinzel text-[10px] tracking-[0.5em] uppercase mb-3 ${
                   tier.highlighted ? "text-gold/70" : "text-gold/50"
                 }`}>
                   {tier.tagline}
@@ -143,7 +143,7 @@ export function PricingTiers() {
                   {tier.name}
                 </h3>
                 <p className={`text-[13px] leading-relaxed ${
-                  tier.highlighted ? "text-warm-gray" : "text-white/38"
+                  tier.highlighted ? "text-warm-gray" : "text-white/62"
                 }`}>
                   {tier.description}
                 </p>
@@ -153,8 +153,8 @@ export function PricingTiers() {
               <div className={`border-t border-b py-6 mb-8 ${
                 tier.highlighted ? "border-charcoal/12" : "border-white/8"
               }`}>
-                <p className={`font-cinzel text-[7px] tracking-[0.42em] uppercase mb-2 ${
-                  tier.highlighted ? "text-warm-gray/60" : "text-white/28"
+                <p className={`font-cinzel text-[10px] tracking-[0.42em] uppercase mb-2 ${
+                  tier.highlighted ? "text-warm-gray/90" : "text-white/52"
                 }`}>
                   {tier.priceLabel}
                 </p>
@@ -163,8 +163,8 @@ export function PricingTiers() {
                 }`}>
                   {tier.price}
                 </p>
-                <p className={`font-cinzel text-[8px] tracking-[0.3em] uppercase ${
-                  tier.highlighted ? "text-warm-gray/50" : "text-white/28"
+                <p className={`font-cinzel text-[11px] tracking-[0.3em] uppercase ${
+                  tier.highlighted ? "text-warm-gray/80" : "text-white/52"
                 }`}>
                   {tier.guestRange}
                 </p>
@@ -185,7 +185,7 @@ export function PricingTiers() {
               {/* CTA */}
               <a
                 href="#contact"
-                className={`block text-center font-cinzel text-[9px] tracking-[0.42em] uppercase py-4 transition-all duration-400 ${
+                className={`block text-center font-cinzel text-xs tracking-[0.42em] uppercase py-4 transition-all duration-400 ${
                   tier.highlighted
                     ? "bg-charcoal text-cream hover:bg-gold hover:text-charcoal"
                     : "border border-gold/40 text-gold hover:bg-gold hover:text-obsidian"
@@ -202,7 +202,7 @@ export function PricingTiers() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-center text-white/22 text-[12px] mt-10 max-w-lg mx-auto leading-relaxed"
+          className="text-center text-white/50 text-xs mt-10 max-w-lg mx-auto leading-relaxed"
         >
           All packages are fully customisable. Final pricing varies based on guest count,
           venue, duration, and service scope. Contact us to begin your bespoke proposal.

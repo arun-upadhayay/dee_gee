@@ -24,15 +24,15 @@ export function Services() {
           className="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-8"
         >
           <div>
-            <p className="font-cinzel text-[8px] tracking-[0.5em] uppercase text-gold/55 mb-5 flex items-center gap-3">
-              <span className="w-8 h-px bg-gold/55" />
+            <p className="font-cinzel text-[11px] tracking-[0.45em] uppercase text-gold/70 mb-5 flex items-center gap-3">
+              <span className="w-8 h-px bg-gold/60" />
               What We Offer
             </p>
             <h2 className="font-display text-5xl md:text-6xl text-white leading-[1.05]">
               Bespoke Services
             </h2>
           </div>
-          <p className="text-white/30 max-w-sm text-[15px] leading-relaxed md:text-right">
+          <p className="text-white/65 max-w-sm text-[15px] leading-relaxed md:text-right">
             From intimate gatherings to grand celebrations, every event receives
             our unwavering attention to detail.
           </p>
@@ -69,7 +69,7 @@ export function Services() {
 
               {/* Text content */}
               <div className="absolute bottom-0 left-0 right-0 p-8">
-                <p className="font-cinzel text-[7px] tracking-[0.42em] uppercase text-gold/55 mb-3">
+                <p className="font-cinzel text-[10px] tracking-[0.38em] uppercase text-gold/70 mb-3">
                   {service.category}
                 </p>
                 <h3 className="font-display text-2xl text-white mb-3 group-hover:text-gold transition-colors duration-300">
@@ -92,13 +92,13 @@ export function Services() {
         >
           <a
             href="/services"
-            className="inline-flex items-center gap-3 px-10 py-4 border border-gold/40 text-gold font-cinzel text-[9px] tracking-[0.38em] uppercase hover:bg-gold hover:text-obsidian transition-all duration-400"
+            className="inline-flex items-center gap-3 px-10 py-4 border border-gold/50 text-gold font-cinzel text-xs tracking-[0.38em] uppercase hover:bg-gold hover:text-obsidian transition-all duration-400"
           >
             View All Services &amp; Pricing
           </a>
           <a
             href="/#contact"
-            className="inline-flex items-center gap-3 px-10 py-4 text-white/40 font-cinzel text-[9px] tracking-[0.38em] uppercase hover:text-white/70 transition-colors duration-300"
+            className="inline-flex items-center gap-3 px-10 py-4 text-white/60 font-cinzel text-xs tracking-[0.38em] uppercase hover:text-white/85 transition-colors duration-300"
           >
             Enquire Directly
             <span className="w-5 h-px bg-white/25" />

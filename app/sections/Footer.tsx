@@ -62,7 +62,7 @@ export function Footer() {
     <footer className="bg-obsidian">
 
       {/* CTA strip */}
-      <div className="border-b border-white/[0.04] px-6 lg:px-8 py-16">
+      <div className="border-b border-white/4 px-6 lg:px-8 py-16">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div>
             <p className="font-cinzel text-[8px] tracking-[0.5em] uppercase text-gold/45 mb-4">
@@ -115,7 +115,7 @@ export function Footer() {
                   href="#"
                   whileHover={{ y: -2 }}
                   transition={{ type: "spring", stiffness: 400 }}
-                  className="w-9 h-9 border border-white/[0.08] flex items-center justify-center text-white/32 hover:text-gold hover:border-gold/35 transition-all duration-300"
+                  className="w-9 h-9 border border-white/8 flex items-center justify-center text-white/32 hover:text-gold hover:border-gold/35 transition-all duration-300"
                   aria-label={label}
                 >
                   {svg}
@@ -149,7 +149,7 @@ export function Footer() {
         </div>
 
         {/* Gold gradient divider */}
-        <div className="my-14 h-px bg-gradient-to-r from-transparent via-gold/18 to-transparent" />
+        <div className="my-14 h-px bg-linear-to-r from-transparent via-gold/18 to-transparent" />
 
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 font-cinzel text-[9px] text-white/18 tracking-wider">

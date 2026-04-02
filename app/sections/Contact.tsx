@@ -111,7 +111,7 @@ export default function Contact() {
             </p>
 
             {/* Gold divider */}
-            <div className="w-16 h-px bg-gradient-to-r from-gold to-transparent mb-10" />
+            <div className="w-16 h-px bg-linear-to-r from-gold to-transparent mb-10" />
 
             <div className="space-y-0">
               {contactDetails.map(({ Icon, label, value, href }, idx) => (
@@ -119,20 +119,20 @@ export default function Contact() {
                   key={idx}
                   className="flex gap-5 py-5 border-b border-charcoal/8 first:border-t"
                 >
-                  <Icon className="w-3.5 h-3.5 text-gold mt-0.5 shrink-0 mt-1" />
+                  <Icon className="w-3.5 h-3.5 text-gold shrink-0 mt-1" />
                   <div>
-                    <p className="font-cinzel text-[10px] tracking-[0.4em] uppercase text-warm-gray/70 mb-1.5">
+                    <p className="font-cinzel text-[11px] tracking-[0.35em] uppercase text-charcoal/55 mb-1.5">
                       {label}
                     </p>
                     {href ? (
                       <a
                         href={href}
-                        className="text-charcoal text-sm leading-relaxed hover:text-gold transition-colors duration-300 whitespace-pre-line"
+                        className="text-charcoal text-[15px] leading-relaxed hover:text-gold transition-colors duration-300 whitespace-pre-line"
                       >
                         {value}
                       </a>
                     ) : (
-                      <p className="text-charcoal text-sm leading-relaxed whitespace-pre-line">
+                      <p className="text-charcoal text-[15px] leading-relaxed whitespace-pre-line">
                         {value}
                       </p>
                     )}
@@ -152,47 +152,47 @@ export default function Contact() {
 
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <label className="block font-cinzel text-[10px] tracking-[0.4em] uppercase text-warm-gray mb-3">
+                  <label className="block font-cinzel text-[12px] tracking-[0.35em] uppercase text-charcoal/70 mb-3">
                     Your Name *
                   </label>
                   <input
                     type="text"
                     required
                     placeholder="Rahul Sharma"
-                    className="w-full bg-transparent border-b border-charcoal/18 pb-3 text-sm text-charcoal placeholder:text-warm-gray/35 outline-none focus:border-gold transition-colors duration-300"
+                    className="w-full bg-transparent border-b border-charcoal/30 pb-3 text-[15px] text-charcoal placeholder:text-warm-gray/60 outline-none focus:border-gold transition-colors duration-300"
                   />
                 </div>
                 <div>
-                  <label className="block font-cinzel text-[10px] tracking-[0.4em] uppercase text-warm-gray mb-3">
+                  <label className="block font-cinzel text-[12px] tracking-[0.35em] uppercase text-charcoal/70 mb-3">
                     Email *
                   </label>
                   <input
                     type="email"
                     required
                     placeholder="rahul@example.com"
-                    className="w-full bg-transparent border-b border-charcoal/18 pb-3 text-sm text-charcoal placeholder:text-warm-gray/35 outline-none focus:border-gold transition-colors duration-300"
+                    className="w-full bg-transparent border-b border-charcoal/30 pb-3 text-[15px] text-charcoal placeholder:text-warm-gray/60 outline-none focus:border-gold transition-colors duration-300"
                   />
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <label className="block font-cinzel text-[10px] tracking-[0.4em] uppercase text-warm-gray mb-3">
+                  <label className="block font-cinzel text-[12px] tracking-[0.35em] uppercase text-charcoal/70 mb-3">
                     Phone
                   </label>
                   <input
                     type="tel"
                     placeholder="+91 00000 00000"
-                    className="w-full bg-transparent border-b border-charcoal/18 pb-3 text-sm text-charcoal placeholder:text-warm-gray/35 outline-none focus:border-gold transition-colors duration-300"
+                    className="w-full bg-transparent border-b border-charcoal/30 pb-3 text-[15px] text-charcoal placeholder:text-warm-gray/60 outline-none focus:border-gold transition-colors duration-300"
                   />
                 </div>
                 <div>
-                  <label className="block font-cinzel text-[10px] tracking-[0.4em] uppercase text-warm-gray mb-3">
+                  <label className="block font-cinzel text-[12px] tracking-[0.35em] uppercase text-charcoal/70 mb-3">
                     Occasion
                   </label>
                   <select
                     defaultValue=""
-                    className="w-full bg-transparent border-b border-charcoal/18 pb-3 text-sm text-charcoal outline-none focus:border-gold transition-colors duration-300 appearance-none cursor-pointer"
+                    className="w-full bg-transparent border-b border-charcoal/30 pb-3 text-[15px] text-charcoal outline-none focus:border-gold transition-colors duration-300 appearance-none cursor-pointer"
                   >
                     <option value="" disabled>Select Type</option>
                     <option>Wedding / Shaadi</option>
@@ -206,24 +206,24 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block font-cinzel text-[10px] tracking-[0.4em] uppercase text-warm-gray mb-3">
+                <label className="block font-cinzel text-[12px] tracking-[0.35em] uppercase text-charcoal/70 mb-3">
                   Guest Count &amp; Event Date
                 </label>
                 <input
                   type="text"
                   placeholder="e.g. 300 guests · 15 Feb 2026"
-                  className="w-full bg-transparent border-b border-charcoal/18 pb-3 text-sm text-charcoal placeholder:text-warm-gray/35 outline-none focus:border-gold transition-colors duration-300"
+                  className="w-full bg-transparent border-b border-charcoal/30 pb-3 text-[15px] text-charcoal placeholder:text-warm-gray/60 outline-none focus:border-gold transition-colors duration-300"
                 />
               </div>
 
               <div>
-                <label className="block font-cinzel text-[10px] tracking-[0.4em] uppercase text-warm-gray mb-3">
+                <label className="block font-cinzel text-[12px] tracking-[0.35em] uppercase text-charcoal/70 mb-3">
                   Your Vision
                 </label>
                 <textarea
                   rows={3}
                   placeholder="Tell us about your dream celebration…"
-                  className="w-full bg-transparent border-b border-charcoal/18 pb-3 text-sm text-charcoal placeholder:text-warm-gray/35 outline-none focus:border-gold transition-colors duration-300 resize-none"
+                  className="w-full bg-transparent border-b border-charcoal/30 pb-3 text-[15px] text-charcoal placeholder:text-warm-gray/60 outline-none focus:border-gold transition-colors duration-300 resize-none"
                 />
               </div>
 

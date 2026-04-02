@@ -53,10 +53,10 @@ export function Story() {
             {/* Main image */}
             <div className="relative aspect-3/4 overflow-hidden z-10">
               <Image
-                src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=900&q=85"
-                alt="Dee Gee Heritage Kitchen"
+                src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=900&q=85"
+                alt="Dee Gee — Indian Culinary Heritage"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               {/* Inset gold frame */}

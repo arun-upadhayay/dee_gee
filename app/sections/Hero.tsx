@@ -26,7 +26,7 @@ export function Hero() {
     <section
       ref={containerRef}
       id="home"
-      className="relative min-h-[100dvh] flex items-end overflow-hidden bg-obsidian"
+      className="relative min-h-dvh flex items-end overflow-hidden bg-obsidian"
     >
       {/* Background with Parallax */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0">
@@ -39,18 +39,18 @@ export function Hero() {
           quality={95}
         />
         {/* Cinematic layered overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-obsidian/94 via-obsidian/68 to-obsidian/28" />
-        <div className="absolute inset-0 bg-gradient-to-t from-obsidian/85 via-obsidian/15 to-obsidian/25" />
+        <div className="absolute inset-0 bg-linear-to-r from-obsidian/94 via-obsidian/68 to-obsidian/28" />
+        <div className="absolute inset-0 bg-linear-to-t from-obsidian/85 via-obsidian/15 to-obsidian/25" />
       </motion.div>
 
       {/* Top vignette */}
-      <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-obsidian/50 to-transparent z-[1] pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-40 bg-linear-to-b from-obsidian/50 to-transparent z-1 pointer-events-none" />
 
       {/* Decorative vertical line — right side */}
-      <div className="absolute right-[7%] top-0 bottom-0 z-[2] hidden xl:flex flex-col items-center justify-center pointer-events-none">
-        <div className="w-px h-32 bg-gradient-to-b from-transparent to-gold/20" />
-        <div className="my-3 w-px h-full max-h-[180px] bg-gold/10" />
-        <div className="w-px h-32 bg-gradient-to-t from-transparent to-gold/20" />
+      <div className="absolute right-[7%] top-0 bottom-0 z-2 hidden xl:flex flex-col items-center justify-center pointer-events-none">
+        <div className="w-px h-32 bg-linear-to-b from-transparent to-gold/20" />
+        <div className="my-3 w-px h-full max-h-45 bg-gold/10" />
+        <div className="w-px h-32 bg-linear-to-t from-transparent to-gold/20" />
       </div>
 
       {/* Main Content — bottom-left editorial anchoring */}
@@ -63,10 +63,10 @@ export function Hero() {
           initial={{ opacity: 0, x: -24 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.15, duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
-          className="flex items-center gap-5 mb-10 lg:mb-12"
+          className="flex items-center gap-5 mb-10 lg:mb-12 overflow-hidden"
         >
-          <div className="w-10 h-px bg-gold/50" />
-          <span className="font-cinzel text-[11px] tracking-[0.55em] uppercase text-gold/75">
+          <div className="w-10 h-px bg-gold/50 shrink-0" />
+          <span className="font-cinzel text-[11px] tracking-[0.3em] sm:tracking-[0.55em] uppercase text-gold/75">
             Est. 1985 &nbsp;·&nbsp; Ludhiana, Punjab
           </span>
         </motion.div>
@@ -94,7 +94,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.9, ease: "easeOut" }}
-          className="text-white/72 text-[16px] max-w-[440px] leading-[2] mb-12 lg:mb-14 font-light"
+          className="text-white/72 text-[16px] max-w-110 leading-loose mb-12 lg:mb-14 font-light"
         >
           Four generations of culinary mastery — refining tradition into
           extraordinary celebrations since 1985.
@@ -131,13 +131,13 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.85, duration: 0.9 }}
-          className="flex flex-wrap items-stretch border-t border-white/[0.055] pt-8 gap-y-6"
+          className="grid grid-cols-2 sm:flex sm:items-stretch border-t border-white/5.5 pt-8 gap-y-6"
         >
           {stats.map((stat, i) => (
             <div
               key={i}
-              className={`pr-8 lg:pr-14 ${
-                i > 0 ? "pl-8 lg:pl-14 border-l border-white/[0.055]" : ""
+              className={`pr-4 sm:pr-8 lg:pr-14 ${
+                i > 0 ? "sm:pl-8 lg:pl-14 sm:border-l border-white/5.5" : ""
               }`}
             >
               <div className="font-display text-2xl lg:text-3xl text-gold leading-none mb-2">
@@ -161,7 +161,7 @@ export function Hero() {
         <motion.div
           animate={{ scaleY: [0.4, 1, 0.4] }}
           transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
-          className="w-px h-12 bg-gradient-to-b from-white/25 to-transparent origin-top"
+          className="w-px h-12 bg-linear-to-b from-white/25 to-transparent origin-top"
         />
         <span className="font-cinzel text-[9px] tracking-[0.55em] uppercase text-white/38">
           Scroll
@@ -169,7 +169,7 @@ export function Hero() {
       </motion.div>
 
       {/* Bottom edge fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-obsidian/30 to-transparent z-[1] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-28 bg-linear-to-t from-obsidian/30 to-transparent z-1 pointer-events-none" />
     </section>
   );
 }

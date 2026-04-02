@@ -62,13 +62,24 @@ export function Footer() {
     <footer className="bg-obsidian">
 
       {/* CTA strip */}
-      <div className="border-b border-white/4 px-6 lg:px-8 py-16">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <div className="bg-cream px-6 lg:px-8 py-20 relative overflow-hidden">
+        {/* Subtle dot grid accent */}
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage: "radial-gradient(circle, #C9A66B 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
+        />
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10 relative">
           <div>
-            <p className="font-cinzel text-[11px] tracking-[0.45em] uppercase text-gold/65 mb-4">
-              Begin Planning
-            </p>
-            <h3 className="font-display text-3xl md:text-4xl text-white leading-tight">
+            <div className="flex items-center gap-4 mb-5">
+              <div className="w-8 h-px bg-gold" />
+              <p className="font-cinzel text-[11px] tracking-[0.45em] uppercase text-gold/80">
+                Begin Planning
+              </p>
+            </div>
+            <h3 className="font-display text-4xl md:text-5xl text-charcoal leading-[1.05]">
               Ready to create something
               <br />
               <em className="text-gold not-italic">extraordinary?</em>
@@ -76,7 +87,7 @@ export function Footer() {
           </div>
           <a
             href="/#contact"
-            className="shrink-0 px-10 py-4 border border-gold/35 text-gold font-cinzel text-[9px] tracking-[0.42em] uppercase hover:bg-gold hover:text-obsidian hover:border-gold transition-all duration-400"
+            className="shrink-0 px-10 py-4 bg-charcoal text-cream font-cinzel text-[9px] tracking-[0.42em] uppercase hover:bg-gold hover:text-obsidian transition-all duration-500"
           >
             Start Planning
           </a>
